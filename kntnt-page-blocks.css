@@ -15,7 +15,7 @@
 
 /* Vertical spacer */
 
-hr.spacer {
+.blocks > hr.spacer {
   margin: calc(var(--blocks-spacer-height) / 2) 0;
   border: none;
 }
@@ -23,7 +23,7 @@ hr.spacer {
 
 /* Individual blocks */
 
-.block {
+.blocks > .block {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -32,11 +32,11 @@ hr.spacer {
 
 @media (min-width: 768px) {
 
-  .block.wide {
-    max-width: auto;
+  .blocks > .block.wide {
+    max-width: none;
   }
 
-  .block.narrow {
+  .blocks > .block.narrow {
     max-width: var(--blocks-narrow-width);
   }
 
@@ -47,7 +47,7 @@ hr.spacer {
 
 @media (max-width: 767px) {
 
-  .block > .part {
+  .blocks > .block > .part {
     width: 100%;
   }
 
@@ -55,25 +55,25 @@ hr.spacer {
 
 @media (min-width: 768px) {
 
-  .block.layout-100 > .part {
+  .blocks > .block.layout-100 > .part {
     width: 100%;
   }
 
-  .block.layout-50-50 > .part {
+  .blocks > .block.layout-50-50 > .part {
     width: 50%;
   }
 
-  .block.layout-67-33 > .part:first-child,
-  .block.layout-33-67 > .part:last-child {
+  .blocks > .block.layout-67-33 > .part:first-child,
+  .blocks > .block.layout-33-67 > .part:last-child {
     width: calc(100% * 2 / 3);
   }
 
-  .block.layout-67-33 > .part:last-child,
-  .block.layout-33-67 > .part:first-child {
+  .blocks > .block.layout-67-33 > .part:last-child,
+  .blocks > .block.layout-33-67 > .part:first-child {
     width: calc(100% / 3);
   }
 
-  .block.layout-33-33-33 > .part {
+  .blocks > .block.layout-33-33-33 > .part {
     width: calc(100% / 3);
   }
 
@@ -82,7 +82,7 @@ hr.spacer {
 
 /* Text part */
 
-.block > .part > .layer.fg {
+.blocks > .block > .part > .layer.fg {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -91,30 +91,49 @@ hr.spacer {
   padding: var(--blocks-fg-padding);
 }
 
-.block > .part > .layer.fg > * {
+.blocks > .block > .part > .layer.fg > * {
   overflow-y: auto;
 }
 
 
 /* Text on image */
 
-.block > .part {
+.blocks > .block > .part {
   display: flex;
   align-items: center;
 }
 
-.block > .part > .layer.bg {
+.blocks > .block > .part > .layer.bg {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
 
-.block > .part > .layer:nth-child(2) {
+.blocks > .block > .part > .layer:nth-child(2) {
   margin-left: -100%;
 }
 
 
-/* Miniumum allowerd height of a block */
+/* Remove margins on content */
+
+.blocks > .block > .part > .layer.bg,
+.blocks > .block > .part > .layer.fg > * > :first-child {
+  margin-top: 0;
+}
+
+.blocks > .block > .part > .layer.bg,
+.blocks > .block > .part > .layer.fg > * > :last-child {
+  margin-bottom: 0;
+}
+
+.blocks > .block > .part > .layer.bg,
+.blocks > .block > .part > .layer.fg > * > * {
+  margin-right: 0;
+  margin-left: 0;
+}
+
+
+/* Minimum allowed height of a block */
 
 .block.height-min-none > .part > .layer {
   min-height: auto;
@@ -145,7 +164,7 @@ hr.spacer {
 }
 
 
-/* Maximun allowerd height of a block */
+/* Maximum allowed height of a block */
 
 .block.height-max-none > .part > .layer {
   max-height: none;
@@ -178,89 +197,89 @@ hr.spacer {
 
 /* Text colors */
 
-.block > .part.fg-dark > .layer.fg,
-.block > .part.fg-dark-on-overlay > .layer.fg {
+.blocks > .block > .part.fg-dark > .layer.fg,
+.blocks > .block > .part.fg-dark-on-overlay > .layer.fg {
   color: var(--fg-dark);
 }
 
-.block > .part.fg-light > .layer.fg,
-.block > .part.fg-light-on-overlay > .layer.fg {
+.blocks > .block > .part.fg-light > .layer.fg,
+.blocks > .block > .part.fg-light-on-overlay > .layer.fg {
   color: var(--fg-light);
 }
 
 
 /* Overlay */
 
-.block > .part.fg-dark.fg-on-overlay > .layer.fg {
+.blocks > .block > .part.fg-dark.fg-on-overlay > .layer.fg {
   background: var(--fg-overlay-light);
 }
 
-.block > .part.fg-light.fg-on-overlay > .layer.fg {
+.blocks > .block > .part.fg-light.fg-on-overlay > .layer.fg {
   background: var(--fg-overlay-dark);
 }
 
 
 /* Text shadow */
 
-.block > .part.fg-light.fg-text-shadow > .layer.fg {
+.blocks > .block > .part.fg-light.fg-text-shadow > .layer.fg {
   text-shadow: var(--fg-text-shadow-light);
 }
 
-.block > .part.fg-dark.fg-text-shadow > .layer.fg {
-  text-shadow: var(--fg--text-shadow-dark);
+.blocks > .block > .part.fg-dark.fg-text-shadow > .layer.fg {
+  text-shadow: var(--fg-text-shadow-dark);
 }
 
 
 /* Colored background */
 
-.block > .part.bg-transparent {
+.blocks > .block > .part.bg-transparent {
   background: transparent;
 }
 
-.block > .part.fg-dark.bg-blue {
+.blocks > .block > .part.fg-dark.bg-blue {
   background: var(--bg-blue-light);
 }
 
-.block > .part.fg-light.bg-blue {
+.blocks > .block > .part.fg-light.bg-blue {
   background: var(--bg-blue-dark);
 }
 
-.block > .part.fg-dark.bg-green {
+.blocks > .block > .part.fg-dark.bg-green {
   background: var(--bg-green-light);
 }
 
-.block > .part.fg-light.bg-green {
+.blocks > .block > .part.fg-light.bg-green {
   background: var(--bg-green-dark);
 }
 
-.block > .part.fg-dark.bg-red {
+.blocks > .block > .part.fg-dark.bg-red {
   background: var(--bg-red-light);
 }
 
-.block > .part.fg-light.bg-red {
+.blocks > .block > .part.fg-light.bg-red {
   background: var(--bg-red-dark);
 }
 
-.block > .part.fg-dark.bg-yellow {
+.blocks > .block > .part.fg-dark.bg-yellow {
   background: var(--bg-yellow-light);
 }
 
-.block > .part.fg-light.bg-yellow {
+.blocks > .block > .part.fg-light.bg-yellow {
   background: var(--bg-yellow-dark);
 }
 
-.block > .part.fg-dark.bg-gray {
+.blocks > .block > .part.fg-dark.bg-gray {
   background: var(--bg-gray-light);
 }
 
-.block > .part.fg-light.bg-gray {
+.blocks > .block > .part.fg-light.bg-gray {
   background: var(--bg-gray-dark);
 }
 
-.block > .part.fg-dark.bg-bw {
+.blocks > .block > .part.fg-dark.bg-bw {
   background: var(--bg-bw-light);
 }
 
-.block > .part.fg-light.bg-bw {
+.blocks > .block > .part.fg-light.bg-bw {
   background: var(--bg-bw-dark);
 }
