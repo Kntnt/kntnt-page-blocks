@@ -28,8 +28,8 @@ A *layout* is a block-level class that determines how the block’s parts are la
 
 A *block width* is the width of a block. It’s determned by following mutual exclusive block-level classes:
 
-* `wide`: The block becomes as wide as possible. Typically, it runs from left to right edge of the viewport. This is default.
-* `narrow`: The block becomes as wide as possible up to a limit. The limit is determiend by the custom property `--blocks-narrow-width`.
+* `width-wide`: The block becomes as wide as possible. Typically, it runs from left to right edge of the viewport. This is default.
+* `width-narrow`: The block becomes as wide as possible up to a limit. The limit is determiend by the custom property `--blocks-narrow-width`.
 
 A *block minimum height* is the lowest height that a block can assume. It’s determned by following mutual exclusive block-level classes:
 
@@ -55,14 +55,14 @@ A *block maximum height* is the highest height that a block can assume. If foreg
 
 A *foreground position* is a class only applicable on a foreground layer in a part within the layout-100 class. The foreground position class determines the position and width of the only element in the layer. The foreground position class ins one of following mutal exclusive classes:
 
-* `wide`: The foreground element fills all of the available width. This is the default.
-* `narrow`: The foreground fills all of the available width up to a limit. The limit is determiend by the custom property `--blocks-narrow-width`.
-* `left-33`: The foreground element takes up 1/3 of the available width and is justifed to the left.
-* `left-50`: The foreground element takes up 1/2 of the available width and is justifed to the left.
-* `left-67`: The foreground element takes up 2/3 of the available width and is justifed to the left.
-* `right-33`: The foreground element takes up 1/3 of the available width and is justifed to the right.
-* `right-50`: The foreground element takes up 1/2 of the available width and is justifed to the right.
-* `right-67`: The foreground element takes up 2/3 of the available width and is justifed to the right.
+* `position-wide`: The foreground element fills all of the available width. This is the default.
+* `position-narrow`: The foreground fills all of the available width up to a limit. The limit is determiend by the custom property `--blocks-narrow-width`.
+* `position-left-33`: The foreground element takes up 1/3 of the available width and is justifed to the left.
+* `position-left-50`: The foreground element takes up 1/2 of the available width and is justifed to the left.
+* `position-left-67`: The foreground element takes up 2/3 of the available width and is justifed to the left.
+* `position-right-33`: The foreground element takes up 1/3 of the available width and is justifed to the right.
+* `position-right-50`: The foreground element takes up 1/2 of the available width and is justifed to the right.
+* `position-right-67`: The foreground element takes up 2/3 of the available width and is justifed to the right.
 
 A *foreground look* is a part-level class that determines the look of the part’s content. Following mutual part-level classes are available:
 
