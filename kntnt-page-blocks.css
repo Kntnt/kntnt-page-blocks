@@ -207,7 +207,7 @@ hr.spacer {
 }
 
 .block > .part.fg-dark.fg-text-shadow > .layer.fg {
-  text-shadow: var(--fg--text-shadow-dark);
+  text-shadow: var(--fg-text-shadow-dark);
 }
 
 
