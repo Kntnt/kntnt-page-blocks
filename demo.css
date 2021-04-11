@@ -6,7 +6,7 @@
 
 /* Customize to your liking */
 
-:root {
+.blocks {
 
   /* The vertical empty space created by <hr class="spacer">. */
   --blocks-spacer-height: 4rem;
