@@ -33,7 +33,7 @@ hr.spacer {
 @media (min-width: 768px) {
 
   .block.wide {
-    max-width: auto;
+    max-width: none;
   }
 
   .block.narrow {
