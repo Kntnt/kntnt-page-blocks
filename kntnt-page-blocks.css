@@ -103,7 +103,7 @@ hr.spacer {
   object-fit: cover;
 }
 
-.block > .part > .layer.fg {
+.block > .part > .layer:nth-child(2) {
   margin-left: -100%;
 }
 
