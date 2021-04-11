@@ -53,6 +53,17 @@ A *block maximum height* is the highest height that a block can assume. If foreg
 * `height-max-75`: The block most not be taller than 75 % of the custom property `--blocks-vh`.
 * `height-max-100`: The block most not be taller than 100% of the custom property `--blocks-vh`.
 
+A *foreground position* is a class only applicable on a foreground layer in a part within the layout-100 class. The foreground position class determines the position and width of the only element in the layer. The foreground position class ins one of following mutal exclusive classes:
+
+* `wide`: The foreground element fills all of the available width. This is the default.
+* `narrow`: The foreground fills all of the available width up to a limit. The limit is determiend by the custom property `--blocks-narrow-width`.
+* `left-33`: The foreground element takes up 1/3 of the available width and is justifed to the left.
+* `left-50`: The foreground element takes up 1/2 of the available width and is justifed to the left.
+* `left-67`: The foreground element takes up 2/3 of the available width and is justifed to the left.
+* `right-33`: The foreground element takes up 1/3 of the available width and is justifed to the right.
+* `right-50`: The foreground element takes up 1/2 of the available width and is justifed to the right.
+* `right-67`: The foreground element takes up 2/3 of the available width and is justifed to the right.
+
 A *foreground look* is a part-level class that determines the look of the part’s content. Following mutual part-level classes are available:
 
 * `fg-dark`: Text color is determined by the cutom property `--fg-dark` which should be close to black. This is default.

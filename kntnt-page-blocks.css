@@ -133,6 +133,45 @@
 }
 
 
+/* Positioning of foreground */
+
+.blocks > .block > .part > .layer.fg.narrow {
+  align-items: center;
+}
+
+.blocks > .block > .part > .layer.fg.narrow > * {
+  max-width: var(--blocks-narrow-width);
+}
+
+
+.blocks > .block > .part > .layer.fg.left-33,
+.blocks > .block > .part > .layer.fg.left-50,
+.blocks > .block > .part > .layer.fg.left-67 {
+  align-items: flex-start;
+}
+
+.blocks > .block > .part > .layer.fg.right-33,
+.blocks > .block > .part > .layer.fg.right-50,
+.blocks > .block > .part > .layer.fg.right-67 {
+  align-items: flex-end;
+}
+
+.blocks > .block > .part > .layer.fg.left-33 > *,
+.blocks > .block > .part > .layer.fg.right-33 > * {
+  max-width: 33%;
+}
+
+.blocks > .block > .part > .layer.fg.left-50 > *,
+.blocks > .block > .part > .layer.fg.right-50 > * {
+  max-width: 50%;
+}
+
+.blocks > .block > .part > .layer.fg.left-67 > *,
+.blocks > .block > .part > .layer.fg.right-67 > * {
+  max-width: 67%;
+}
+
+
 /* Minimum allowed height of a block */
 
 .block.height-min-none > .part > .layer {
