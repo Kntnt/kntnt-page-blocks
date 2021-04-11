@@ -95,6 +95,10 @@ html {
 
 /* Styling of demo content */
 
+body {
+  background: moccasin;
+}
+
 #header {
   display: flex;
   flex-direction: column;
