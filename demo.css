@@ -1,0 +1,118 @@
+/* Customize to your liking */
+
+:root {
+
+  /* The vertical empty space created by <hr class="spacer">. */
+  --blocks-spacer-height: 4rem;
+
+  /* The padding of foreground layers. */
+  --blocks-fg-padding: 4rem;
+
+  /* The narrow width */
+  --blocks-narrow-width: 45rem;
+
+  /* Viewport height minus vertical space for fixed or sticky header and similar */
+  --blocks-vh: calc(100vh - 5rem);
+
+  /* Background colors */
+  --bg-blue-light: #d7eefd;
+  --bg-blue-dark: #002a4a;
+  --bg-green-light: #cce4ca;
+  --bg-green-dark: #00412d;
+  --bg-yellow-light: #fff8bb;
+  --bg-yellow-dark: #f49800;
+  --bg-red-light: #fad3d3;
+  --bg-red-dark: #870c1e;
+  --bg-gray-dark: hsl(0, 0%, 28%);
+  --bg-gray-light: hsl(0, 0%, 78%);
+  --bg-bw-dark: hsl(0, 0%, 8%);
+  --bg-bw-light: hsl(0, 0%, 97%);
+
+  /* Foreground colors */
+  --fg-dark: hsl(0, 0%, 4%);
+  --fg-light: hsl(0, 0%, 97%);
+
+  /* Overlay used between text and image */
+  --fg-overlay-dark: rgba(0%, 0%, 0%, 50%);
+  --fg-overlay-light: rgba(100%, 100%, 100%, 50%);
+
+  /* Text shadow used on text on image with no overlay */
+  --fg-text-shadow-dark: 0px 2px 5px rgba(0%, 0%, 0%, 80%);
+  --fg-text-shadow-light: 0px 2px 5px rgba(100%, 100%, 100%, 80%);
+
+}
+
+
+/* Recommended normalization */
+
+@media (max-width: 767px) {
+
+  html {
+    font-size: 16px;
+  }
+
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+
+  html {
+    font-size: 18px;
+  }
+
+}
+
+@media (min-width: 1024px) {
+
+  html {
+    font-size: 20px;
+  }
+
+}
+
+body {
+  margin: 0;
+}
+
+
+/* Required normalization */
+
+html {
+  box-sizing: border-box;
+}
+
+*,
+::after,
+::before {
+  box-sizing: inherit;
+}
+
+
+/* Styling of demo content */
+
+#header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: sticky;
+  top: 0;
+  height: 5rem;
+  background: #aaa;
+  color: #000;
+  box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.5);
+}
+
+#header > * {
+  text-align: center;
+}
+
+.left {
+  text-align: left;
+}
+
+.center {
+  text-align: center;
+}
+
+.right {
+  text-align: right;
+}

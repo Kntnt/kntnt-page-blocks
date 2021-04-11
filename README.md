@@ -51,14 +51,14 @@ A *block maximum height* is the highest height that a block can assume. If foreg
 * `height-max-50`: The block most not be taller than 50 % of the custom property `--blocks-vh`.
 * `height-max-67`: The block most not be taller than 67 % of the custom property `--blocks-vh`.
 * `height-max-75`: The block most not be taller than 75 % of the custom property `--blocks-vh`.
-* `height-max-100`: The block most not be smtalleraller than 100% of the viewport height minus the custom property `--heigth-deduction`.
+* `height-max-100`: The block most not be taller than 100% of the custom property `--blocks-vh`.
 
 A *foreground look* is a part-level class that determines the look of the part’s content. Following mutual part-level classes are available:
 
 * `fg-dark`: Text color is determined by the cutom property `--fg-dark` which should be close to black. This is default.
 * `fg-light`: Text color is determined by the cutom property `--fg-light` which should be close to white.
 
-* `fg-with-shadow`: Text cast shadow with the same color. The shadow’s transparence is determiend by the custom property `--blocks-text-shadow-transparency`.
+* `fg-text-shadow`: Text cast shadow. The color and transparancy of the shadow is determined by one of two custom properties. If text color is dark, the custom property `--fg-text-shadow-dark` is used. If text color is light, the custom property `--fg-text-shadow-light` is used.
 * `fg-on-overlay`: There is a semi-transparent sheet underneath the foreground (but above and the background layer if present). The color and transparancy of the sheet is determined by one of two custom properties. If text color is dark, the custom property `--fg-shadow-light` is used. If text color is light, the custom property `--fg-shadow-dark` is used.
 
 A *background look* is a part-level class that determines the look of the part’s content. Follwoing mutual exclusive part-level classes are available:

@@ -1,112 +1,17 @@
-/* Styling of the demo header */
-
-#header {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  position: sticky;
-  top: 0;
-  height: var(--100vh-deduction);
-  background: #aaa;
-  color: #000;
-  box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.5);
-}
-
-#header > * {
-  text-align: center;
-}
-
-
-/* Recommended normalization */
-
-@media (max-width: 767px) {
-
-  html {
-    font-size: 16px;
-  }
-
-}
-
-@media (min-width: 768px) and (max-width: 1023px) {
-
-  html {
-    font-size: 18px;
-  }
-
-}
-
-@media (min-width: 1024px) {
-
-  html {
-    font-size: 20px;
-  }
-
-}
-
-body {
-  margin: 0;
-}
-
-
-/* Required normalization */
-
-html {
-  box-sizing: border-box;
-}
-
-*,
-::after,
-::before {
-  box-sizing: inherit;
-}
-
-
-/* Customize to your liking */
-
-:root {
-  /* The narrow width */
-  --content-width: 45rem;
-
-  /* The padding inside parts, and the space of <hr class="space">. */
-  --block-spacing: 4rem;
-
-  /* Heitgh reserved for fixed/stick header etc. */
-  --100vh-deduction: 5rem;
-
-  /* Background colors */
-  --bg-blue-light: #d7eefd;
-  --bg-blue-dark: #002a4a;
-  --bg-green-light: #cce4ca;
-  --bg-green-dark: #00412d;
-  --bg-yellow-light: #fff8bb;
-  --bg-yellow-dark: #f49800;
-  --bg-red-light: #fad3d3;
-  --bg-red-dark: #870c1e;
-  --bg-gray-dark: hsl(0, 0%, 28%);
-  --bg-gray-light: hsl(0, 0%, 78%);
-  --bg-bw-dark: hsl(0, 0%, 8%);
-  --bg-bw-light: hsl(0, 0%, 97%);
-
-  /* Foreground colors */
-  --fg-dark: hsl(0, 0%, 4%);
-  --fg-light: hsl(0, 0%, 97%);
-
-  /* Overlay used between text and image */
-  --fg-overlay-light: rgba(100%, 100%, 100%, 50%);
-  --fg-overlay-dark: rgba(0%, 0%, 0%, 50%);
-
-  /* Text shadow used on text on image with no overlay */
-  --fg-shadow-dark: 0px 2px 5px rgba(0, 0, 0, 0.8);
-  --fg-shadow-light: 0px 2px 5px rgba(1, 1, 1, 0.8);
-}
-
-
 /* Blocks container */
 
 .blocks {
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+
+/* Vertical spacer */
+
+hr.spacer {
+  margin: calc(var(--blocks-spacer-height) / 2) 0;
+  border: none;
 }
 
 
@@ -126,7 +31,7 @@ html {
   }
 
   .block.narrow {
-    max-width: var(--content-width);
+    max-width: var(--blocks-narrow-width);
   }
 
 }
@@ -171,114 +76,140 @@ html {
 
 /* Text part */
 
-.block > .part > .text {
+.block > .part > .layer.fg {
   display: flex;
   flex-direction: column;
   justify-content: center;
   width: 100%;
   height: 100%;
-  padding: var(--block-spacing);
+  padding: var(--blocks-fg-padding);
 }
 
-.block > .part > .text > * {
+.block > .part > .layer.fg > * {
   overflow-y: auto;
 }
 
 
 /* Text on image */
 
-.block > .part.bg-image {
+.block > .part {
   display: flex;
   align-items: center;
 }
 
-.block > .part.bg-image > .image {
+.block > .part > .layer.bg {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
 
-.block > .part.bg-image > .text {
+.block > .part > .layer.fg {
   margin-left: -100%;
 }
 
 
 /* Miniumum allowerd height of a block */
 
-.block.height-min-none > .part > * {
+.block.height-min-none > .part > .layer {
   min-height: auto;
 }
 
-.block.height-min-25 > .part > * {
-  min-height: 25vh;
+.block.height-min-25 > .part > .layer {
+  min-height: calc(0.25 * var(--blocks-vh));
 }
 
-.block.height-min-33 > .part > * {
-  min-height: 33vh;
+.block.height-min-33 > .part > .layer {
+  min-height: calc(0.33 * var(--blocks-vh));
 }
 
-.block.height-min-50 > .part > * {
-  min-height: 50vh;
+.block.height-min-50 > .part > .layer {
+  min-height: calc(0.50 * var(--blocks-vh));
 }
 
-.block.height-min-67 > .part > * {
-  min-height: 67vh;
+.block.height-min-67 > .part > .layer {
+  min-height: calc(0.67 * var(--blocks-vh));
 }
 
-.block.height-min-75 > .part > * {
-  min-height: 75vh;
+.block.height-min-75 > .part > .layer {
+  min-height: calc(0.75 * var(--blocks-vh));
 }
 
-.block.height-min-100 > .part > * {
-  min-height: calc(100vh - var(--100vh-deduction));
+.block.height-min-100 > .part > .layer {
+  min-height: var(--blocks-vh);
 }
 
 
 /* Maximun allowerd height of a block */
 
-.block.height-max-none > .part > * {
+.block.height-max-none > .part > .layer {
   max-height: auto;
 }
 
-.block.height-max-25 > .part > * {
-  max-height: 25vh;
+.block.height-max-25 > .part > .layer {
+  max-height: calc(0.25 * var(--blocks-vh));
 }
 
-.block.height-max-33 > .part > * {
-  max-height: 33vh;
+.block.height-max-33 > .part > .layer {
+  max-height: calc(0.33 * var(--blocks-vh));
 }
 
-.block.height-max-50 > .part > * {
-  max-height: 50vh;
+.block.height-max-50 > .part > .layer {
+  max-height: calc(0.50 * var(--blocks-vh));
 }
 
-.block.height-max-67 > .part > * {
-  max-height: 67vh;
+.block.height-max-67 > .part > .layer {
+  max-height: calc(0.67 * var(--blocks-vh));
 }
 
-.block.height-max-75 > .part > * {
-  max-height: 75vh;
+.block.height-max-75 > .part > .layer {
+  max-height: calc(0.75 * var(--blocks-vh));
 }
 
-.block.height-max-100 > .part > * {
-  max-height: calc(100vh - var(--100vh-deduction));
+.block.height-max-100 > .part > .layer {
+  max-height: var(--blocks-vh);
 }
 
 
 /* Text colors */
 
-.block > .part.fg-dark > .text,
-.block > .part.fg-dark-on-overlay > .text {
+.block > .part.fg-dark > .layer.fg,
+.block > .part.fg-dark-on-overlay > .layer.fg {
   color: var(--fg-dark);
 }
 
-.block > .part.fg-light > .text,
-.block > .part.fg-light-on-overlay > .text {
+.block > .part.fg-light > .layer.fg,
+.block > .part.fg-light-on-overlay > .layer.fg {
   color: var(--fg-light);
 }
 
 
+/* Overlay */
+
+.block > .part.fg-dark.fg-on-overlay > .layer.fg {
+  background: var(--fg-overlay-light);
+}
+
+.block > .part.fg-light.fg-on-overlay > .layer.fg {
+  background: var(--fg-overlay-dark);
+}
+
+
+/* Text shadow */
+
+.block > .part.fg-light.fg-text-shadow > .layer.fg {
+  text-shadow: var(--fg-text-shadow-light);
+}
+
+.block > .part.fg-dark.fg-text-shadow > .layer.fg {
+  text-shadow: var(--fg--text-shadow-dark);
+}
+
+
 /* Colored background */
+
+.block > .part.bg-transparent {
+  background: transparent;
+}
 
 .block > .part.fg-dark.bg-blue {
   background: var(--bg-blue-light);
@@ -326,50 +257,4 @@ html {
 
 .block > .part.fg-light.bg-bw {
   background: var(--bg-bw-dark);
-}
-
-.block > .part.bg-transparent {
-  background: transparent;
-}
-
-
-/* Image background */
-
-.block > .part.bg-image.fg-dark-on-overlay > .text {
-  background: var(--fg-overlay-light);
-}
-
-.block > .part.bg-image.fg-light-on-overlay > .text {
-  background: var(--fg-overlay-dark);
-}
-
-.block > .part.bg-image.fg-light > .text {
-  text-shadow: var(--fg-shadow-light);
-}
-
-.block > .part.bg-image.fg-dark > .text {
-  text-shadow: var(--fg-shadow-dark);
-}
-
-
-/* Text adjustment */
-
-.block > .part > .text > .left {
-  text-align: left;
-}
-
-.block > .part > .text > .center {
-  text-align: center;
-}
-
-.block > .part > .text > .right {
-  text-align: right;
-}
-
-
-/* Vertical spacer */
-
-hr.space {
-  margin: calc(var(--block-spacing) / 2) 0;
-  border: none;
 }
