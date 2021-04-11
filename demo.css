@@ -43,8 +43,8 @@
   --fg-overlay-light: rgba(100%, 100%, 100%, 50%);
 
   /* Text shadow used on text on image with no overlay */
-  --fg-text-shadow-dark: 0px 2px 5px rgba(0%, 0%, 0%, 80%);
-  --fg-text-shadow-light: 0px 2px 5px rgba(100%, 100%, 100%, 80%);
+  --fg-text-shadow-dark: 0px 2px 5px rgba(0%, 0%, 0%, 50%);
+  --fg-text-shadow-light: 0px 2px 5px rgba(0%, 0%, 0%, 50%);
 
 }
 
