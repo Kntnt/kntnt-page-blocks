@@ -1,4 +1,4 @@
-# Page blocks
+# Kntnt Page Blocks
 
 *Page Blocks* is a HTML and CSS solution to vertically divide whole or parts of a web page into *blocks* of content.
 
