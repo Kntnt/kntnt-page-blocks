@@ -148,7 +148,7 @@ hr.spacer {
 /* Maximun allowerd height of a block */
 
 .block.height-max-none > .part > .layer {
-  max-height: auto;
+  max-height: none;
 }
 
 .block.height-max-25 > .part > .layer {
