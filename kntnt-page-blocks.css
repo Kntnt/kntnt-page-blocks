@@ -91,6 +91,10 @@
   padding: var(--blocks-fg-padding);
 }
 
+.blocks > .block > .part > .layer.fg:empty {
+  display: none;
+}
+
 .blocks > .block > .part > .layer.fg > * {
   overflow-y: auto;
 }
