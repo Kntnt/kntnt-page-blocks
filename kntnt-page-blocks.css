@@ -240,13 +240,13 @@
 
 /* Text colors */
 
-.blocks > .block > .part.fg-dark > .layer.fg,
-.blocks > .block > .part.fg-dark-on-overlay > .layer.fg {
+.blocks > .block > .part.fg-dark > .layer.fg > * > *,
+.blocks > .block > .part.fg-dark-on-overlay > .layer.fg > * > * {
   color: var(--fg-dark);
 }
 
-.blocks > .block > .part.fg-light > .layer.fg,
-.blocks > .block > .part.fg-light-on-overlay > .layer.fg {
+.blocks > .block > .part.fg-light > .layer.fg > * > *,
+.blocks > .block > .part.fg-light-on-overlay > .layer.fg > * > * {
   color: var(--fg-light);
 }
 
