@@ -108,6 +108,10 @@ If you are unfamiliar with Git, please date it as a new issue on the plugin's [i
 
 If you are familiar with Git, please make a pull request.
 
+## See also
+
+[Kntnt Bricks](https://github.com/Kntnt/kntnt-bricks) builds on this project by using the WordPress plugins [Advanced Custom Fields (ACF) Pro](https://www.advancedcustomfields.com/pro/) and [Custom Content Shortcode (CCS)](https://wordpress.org/plugins/custom-content-shortcode/) to give WordPress an alternative way of building web pages.
+
 ## Changelog
 
 ### 1.0.0
